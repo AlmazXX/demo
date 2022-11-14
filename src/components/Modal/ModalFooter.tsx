@@ -10,7 +10,7 @@ const ModalFooter: React.FC<Props> = ({ buttons, children }) => {
     <div className="modal-footer">
       {children}
       {buttons ? buttons.map((button) => (
-        <button className={"btn btn-" + button.type} onClick={button.onClick}>
+        <button key={Math.random() + Math.random()} className={"btn btn-" + button.type} onClick={button.onClick}>
           {button.label}
         </button>
       )) : null}
