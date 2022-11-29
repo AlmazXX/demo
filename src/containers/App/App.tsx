@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Alert from "../../components/Alert/Alert";
 import Modal from "../../components/Modal/Modal";
 import ModalBody from "../../components/Modal/ModalBody";
@@ -23,7 +23,7 @@ function App() {
         openAlert();
       },
     },
-    { type: "danger", label: "Close", onClick: () => cancelModal },
+    { type: "danger", label: "Close", onClick: () => cancelModal() },
   ];
 
   return (
@@ -31,7 +31,12 @@ function App() {
       <button className="btn btn-primary my-5" onClick={openModal}>
         Open modal
       </button>
-      <Alert show={showAlert} type="success" onDismiss={cancelAlert} clickDismissable>
+      <Alert
+        show={showAlert}
+        type="success"
+        onDismiss={cancelAlert}
+        clickDismissable
+      >
         You clicked Continue
       </Alert>
       <Modal title="Modal" show={showModal} onClose={cancelModal}>
